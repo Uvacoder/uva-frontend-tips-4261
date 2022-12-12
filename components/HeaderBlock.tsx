@@ -6,7 +6,7 @@ export const HeaderBlock = () => {
     const [totalStars, setTotalStars] = React.useState('');
 
     React.useEffect(() => {
-        fetch('https://api.github.com/repos/1milligram/frontend-tips')
+        fetch('https://api.github.com/repos/uvacoder/frontendtips-test')
             .then((res) => res.json())
             .then((data) => setTotalStars(data.stargazers_count))
             .catch(console.log);
@@ -15,7 +15,7 @@ export const HeaderBlock = () => {
     const HeaderLogo = React.forwardRef<HTMLAnchorElement, React.LinkHTMLAttributes<HTMLAnchorElement>>(
         (props, ref) => (
             <a href={props.href} onClick={props.onClick} ref={ref}>
-                <Logo brand="Front-end Tips" />
+                <Logo brand="FrontendTips" />
             </a>
         )
     );
@@ -27,7 +27,7 @@ export const HeaderBlock = () => {
                     <Link href="/" passHref>
                         <HeaderLogo />
                     </Link>
-                    <Link href="https://github.com/1milligram/frontend-tips">
+                    <Link href="https://github.com/uvacoder/frontendtips-test">
                         <a className="block-header__cta">GitHub {totalStars}★</a>
                     </Link>
                 </div>
